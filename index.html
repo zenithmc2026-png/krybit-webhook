@@ -1,200 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Krybit</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Krybit 3D Profile</title>
 <style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
-}
-
+*{margin:0;padding:0;box-sizing:border-box;font-family:Inter,Arial,sans-serif}
 body{
-height:100vh;
-overflow:hidden;
-background:linear-gradient(135deg,#0d0d0d,#151515,#1f0036);
-display:flex;
-justify-content:center;
-align-items:center;
-color:white;
+  min-height:100vh;overflow:hidden;color:white;
+  background:radial-gradient(circle at top,#34105f,#090016 55%,#020007);
+  display:flex;align-items:center;justify-content:center;
 }
-
-.bg{
-position:fixed;
-width:100%;
-height:100%;
-overflow:hidden;
-z-index:-1;
+.stars span{
+  position:absolute;width:4px;height:4px;border-radius:50%;
+  background:#b77cff;box-shadow:0 0 18px #b77cff;
+  animation:float 8s linear infinite;
 }
-
-.particle{
-position:absolute;
-width:4px;
-height:4px;
-border-radius:50%;
-background:#b44cff;
-box-shadow:0 0 15px #b44cff;
-animation:float 12s linear infinite;
+@keyframes float{from{transform:translateY(110vh)}to{transform:translateY(-20vh)}}
+.aura{
+  position:absolute;width:420px;height:420px;border-radius:50%;
+  background:conic-gradient(#9d4dff,#00e5ff,#ff4df8,#9d4dff);
+  filter:blur(70px);opacity:.55;animation:spin 6s linear infinite;
 }
-
-@keyframes float{
-from{
-transform:translateY(110vh);
-opacity:0;
-}
-50%{
-opacity:1;
-}
-to{
-transform:translateY(-20vh);
-opacity:0;
-}
-}
-
+@keyframes spin{to{transform:rotate(360deg)}}
 .card{
-width:420px;
-backdrop-filter:blur(20px);
-background:rgba(255,255,255,.05);
-border:1px solid rgba(255,255,255,.1);
-border-radius:30px;
-padding:35px;
-text-align:center;
-box-shadow:0 0 50px rgba(180,76,255,.25);
+  position:relative;width:390px;padding:30px;border-radius:34px;
+  background:linear-gradient(145deg,rgba(255,255,255,.16),rgba(255,255,255,.04));
+  border:1px solid rgba(255,255,255,.2);
+  box-shadow:0 30px 80px #000, inset 0 0 40px rgba(255,255,255,.05);
+  backdrop-filter:blur(22px);
+  transform-style:preserve-3d;
+  animation:enter 1s ease, hover 4s ease-in-out infinite;
 }
-
-.pfp{
-width:120px;
-height:120px;
-border-radius:50%;
-border:3px solid #b44cff;
-box-shadow:0 0 25px #b44cff;
-object-fit:cover;
-}
-
-h1{
-margin-top:15px;
-font-size:32px;
-}
-
-.bio{
-opacity:.8;
-margin-top:5px;
-margin-bottom:25px;
-}
-
-.links{
-display:flex;
-flex-direction:column;
-gap:12px;
-}
-
-.btn{
-padding:15px;
-border-radius:15px;
-text-decoration:none;
-color:white;
-font-weight:600;
-background:rgba(180,76,255,.15);
-border:1px solid rgba(180,76,255,.5);
-transition:.3s;
-}
-
-.btn:hover{
-transform:translateY(-3px);
-box-shadow:0 0 20px #b44cff;
-}
-
-.stats{
-display:flex;
-justify-content:space-between;
-margin-top:25px;
-padding-top:20px;
-border-top:1px solid rgba(255,255,255,.1);
-}
-
-.stat h2{
-color:#b44cff;
-}
-
-.music{
-margin-top:20px;
-font-size:14px;
-opacity:.7;
-}
-
+@keyframes enter{from{opacity:0;transform:scale(.8) rotateX(25deg)}to{opacity:1}}
+@keyframes hover{50%{transform:translateY(-14px) rotateX(6deg) rotateY(-6deg)}}
 .badge{
-display:inline-block;
-padding:5px 10px;
-background:#b44cff;
-border-radius:999px;
-font-size:12px;
-margin-bottom:10px;
+  display:inline-block;padding:7px 14px;border-radius:999px;
+  background:linear-gradient(90deg,#8b5cf6,#06b6d4);
+  font-size:12px;font-weight:800;box-shadow:0 0 25px #8b5cf6;
+}
+.pfp{
+  width:120px;height:120px;border-radius:50%;margin:18px auto 10px;display:block;
+  border:4px solid #a855f7;object-fit:cover;
+  box-shadow:0 0 35px #a855f7,0 0 80px rgba(0,229,255,.35);
+}
+h1{
+  font-size:38px;text-align:center;
+  background:linear-gradient(90deg,#fff,#a855f7,#00e5ff,#fff);
+  -webkit-background-clip:text;color:transparent;
+  background-size:300%;animation:grad 3s linear infinite;
+}
+@keyframes grad{to{background-position:300%}}
+.bio{text-align:center;color:#ddd;margin:8px 0 22px}
+.links{display:grid;gap:13px}
+.btn{
+  position:relative;text-decoration:none;color:white;padding:16px;border-radius:18px;
+  background:linear-gradient(145deg,rgba(139,92,246,.32),rgba(6,182,212,.14));
+  border:1px solid rgba(255,255,255,.18);
+  box-shadow:0 10px 0 rgba(0,0,0,.35),0 0 25px rgba(139,92,246,.25);
+  font-weight:800;transition:.25s;overflow:hidden;
+}
+.btn:before{
+  content:"";position:absolute;inset:0;left:-100%;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.35),transparent);
+  transition:.5s;
+}
+.btn:hover{transform:translateY(-6px) scale(1.03);box-shadow:0 16px 0 rgba(0,0,0,.35),0 0 40px #8b5cf6}
+.btn:hover:before{left:100%}
+.stats{display:flex;justify-content:space-between;margin-top:22px}
+.stat{
+  width:31%;padding:12px;border-radius:16px;text-align:center;
+  background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12)
+}
+.stat b{color:#00e5ff;font-size:20px}
+.orb{
+  position:absolute;right:-35px;top:-35px;width:90px;height:90px;border-radius:50%;
+  background:radial-gradient(circle,#fff,#00e5ff 30%,#8b5cf6 70%);
+  box-shadow:0 0 50px #00e5ff;animation:bounce 3s ease-in-out infinite;
+}
+@keyframes bounce{50%{transform:translateY(-18px) scale(1.08)}}
+.music{
+  margin-top:20px;padding:13px;border-radius:16px;text-align:center;
+  background:rgba(0,0,0,.25);color:#ddd;border:1px solid rgba(255,255,255,.12)
 }
 </style>
 </head>
 <body>
 
-<div class="bg" id="bg"></div>
+<div class="aura"></div>
+<div class="stars" id="stars"></div>
 
-<div class="card">
+<div class="card" id="card">
+  <div class="orb"></div>
+  <div style="text-align:center"><span class="badge">✦ KRYBIT PROFILE</span></div>
 
-<div class="badge">👑 OWNER</div>
+  <img class="pfp" src="https://i.imgur.com/8Km9tLL.jpg">
+  <h1>Bishweshwar</h1>
+  <p class="bio">Developer • Minecraft • Discord • Store Owner</p>
 
-<img class="pfp" src="https://i.imgur.com/8Km9tLL.jpg">
+  <div class="links">
+    <a class="btn" href="#" target="_blank">💬 Discord Server</a>
+    <a class="btn" href="#" target="_blank">📸 Instagram</a>
+    <a class="btn" href="#" target="_blank">🎮 Minecraft Server</a>
+    <a class="btn" href="#" target="_blank">🛒 Krybit Store</a>
+  </div>
 
-<h1>Bishweshwar</h1>
+  <div class="stats">
+    <div class="stat"><b>5K+</b><br>Users</div>
+    <div class="stat"><b>24/7</b><br>Online</div>
+    <div class="stat"><b>100+</b><br>Sales</div>
+  </div>
 
-<p class="bio">
-Developer • Minecraft • Discord • Krybit
-</p>
-
-<div class="links">
-<a class="btn" href="#">💬 Discord</a>
-<a class="btn" href="#">📸 Instagram</a>
-<a class="btn" href="#">🎮 Minecraft Server</a>
-<a class="btn" href="#">🛒 Krybit Store</a>
-</div>
-
-<div class="stats">
-<div class="stat">
-<h2>5K+</h2>
-<p>Users</p>
-</div>
-
-<div class="stat">
-<h2>24/7</h2>
-<p>Support</p>
-</div>
-
-<div class="stat">
-<h2>100+</h2>
-<p>Sales</p>
-</div>
-</div>
-
-<div class="music">
-🎵 Listening to Spotify...
-</div>
-
+  <div class="music">🎵 Now playing: Neon Dreams</div>
 </div>
 
 <script>
-const bg=document.getElementById("bg");
-
-for(let i=0;i<80;i++){
-let p=document.createElement("div");
-p.className="particle";
-p.style.left=Math.random()*100+"vw";
-p.style.animationDuration=(Math.random()*10+5)+"s";
-p.style.animationDelay=Math.random()*5+"s";
-bg.appendChild(p);
+const stars=document.getElementById("stars");
+for(let i=0;i<90;i++){
+  const s=document.createElement("span");
+  s.style.left=Math.random()*100+"vw";
+  s.style.animationDuration=5+Math.random()*10+"s";
+  s.style.animationDelay=Math.random()*6+"s";
+  stars.appendChild(s);
 }
+
+const card=document.getElementById("card");
+document.addEventListener("mousemove",e=>{
+  const x=(window.innerWidth/2-e.clientX)/35;
+  const y=(window.innerHeight/2-e.clientY)/35;
+  card.style.transform=`rotateY(${-x}deg) rotateX(${y}deg) translateY(-8px)`;
+});
 </script>
 
 </body>
