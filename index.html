@@ -1,4 +1,3 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,101 +11,110 @@
 
   <div class="cursor-glow"></div>
   <div class="grid-bg"></div>
+  <div class="snow"></div>
   <canvas id="stars"></canvas>
 
-  <main class="dashboard">
+  <main class="dashboard glass">
 
     <nav class="navbar">
-      <div class="logo">K</div>
+      <div class="brand">KRYBIT</div>
       <div class="nav-links">
-        <a>Home</a>
-        <a>Projects</a>
-        <a>Store</a>
-        <a>About</a>
-        <a>Contact</a>
+        <a href="#">Home</a>
+        <a href="#">Discord</a>
+        <a href="#">Store</a>
+        <a href="#">Music</a>
       </div>
-      <div class="nav-icons">
-        <button><i class="fa-solid fa-sun"></i></button>
-        <button><i class="fa-solid fa-wave-square"></i></button>
-        <button><i class="fa-solid fa-bars"></i></button>
-      </div>
+      <div class="live-dot">● Online</div>
     </nav>
 
-    <section class="layout">
+    <section class="main-layout">
 
-      <div class="hero glass">
-        <div class="avatar-box">
-          <div class="orbit"></div>
-          <img src="https://mc-heads.net/body/Steve/260" alt="Avatar" />
+      <section class="profile-card glass">
+        <div class="avatar-zone">
+          <div class="avatar-ring"></div>
+          <img src="https://mc-heads.net/body/Steve/280" class="avatar" alt="Avatar">
         </div>
 
-        <div class="hero-info">
-          <span class="pill">● Available for work</span>
-          <h1>KRYBIT</h1>
-          <h2>Developer</h2>
-          <p>I build, design and create experiences that make an impact.</p>
+        <div class="profile-info">
+          <span class="tag">✦ Apple Vision Profile</span>
+          <h1>Krybit</h1>
+          <h2>Developer • Minecraft • Discord</h2>
+          <p>
+            Building clean websites, Discord systems, Minecraft servers,
+            and premium digital projects.
+          </p>
 
-          <div class="social-icons">
-            <a><i class="fa-brands fa-discord"></i></a>
-            <a><i class="fa-brands fa-instagram"></i></a>
-            <a><i class="fa-brands fa-github"></i></a>
-            <a><i class="fa-solid fa-envelope"></i></a>
+          <div class="socials">
+            <a href="#"><i class="fa-brands fa-discord"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-github"></i></a>
+            <a href="#"><i class="fa-solid fa-envelope"></i></a>
           </div>
         </div>
+      </section>
 
-        <div class="stats-row">
-          <div><i class="fa-solid fa-users"></i><b>5K+</b><span>Users</span></div>
-          <div><i class="fa-solid fa-clock"></i><b>24/7</b><span>Support</span></div>
-          <div><i class="fa-solid fa-cart-shopping"></i><b>100+</b><span>Sales</span></div>
-          <div><i class="fa-solid fa-star"></i><b>3+</b><span>Years</span></div>
-        </div>
-      </div>
-
-      <div class="right-side">
+      <section class="side-panels">
 
         <div class="discord-card glass">
-          <div>
-            <h3><i class="fa-brands fa-discord"></i> Discord Status</h3>
-            <h2><span></span> Online</h2>
-            <p>Playing Minecraft 🧊</p>
+          <div class="card-heading">
+            <i class="fa-brands fa-discord"></i>
+            <span>Discord Status</span>
           </div>
-          <a class="join-btn" href="#">Join Server ↗</a>
-          <div class="equalizer"></div>
-        </div>
 
-        <div class="spotify-card glass">
-          <div class="song-cover"></div>
-          <div class="song-info">
-            <h3><i class="fa-brands fa-spotify"></i> Now Playing</h3>
-            <h2>Montagem Coral</h2>
-            <p>Slowed + Reverb</p>
-            <div class="progress"><span></span></div>
-            <div class="controls">
-              <i class="fa-solid fa-backward"></i>
-              <button><i class="fa-solid fa-pause"></i></button>
-              <i class="fa-solid fa-forward"></i>
-            </div>
+          <h3><span></span> Online</h3>
+          <p>Playing Minecraft • Building Krybit</p>
+
+          <a href="#" class="join-btn">Join Server ↗</a>
+
+          <div class="sound-bars">
+            <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
           </div>
         </div>
 
-        <div class="quick-links">
-          <a class="quick glass"><i class="fa-brands fa-discord"></i><b>Discord</b><span>Join Server</span></a>
-          <a class="quick glass"><i class="fa-brands fa-instagram"></i><b>Instagram</b><span>Follow Me</span></a>
-          <a class="quick glass"><i class="fa-solid fa-cube"></i><b>Minecraft</b><span>Play With Us</span></a>
-          <a class="quick glass"><i class="fa-solid fa-bag-shopping"></i><b>Store</b><span>Check Out</span></a>
+        <div class="apple-card glass">
+          <div class="card-heading">
+            <i class="fa-brands fa-apple"></i>
+            <span>Apple Music</span>
+          </div>
+
+          <div class="apple-frame">
+            <iframe
+              src="https://embed.music.apple.com/in/album/freedom-single/1010891982"
+              allowfullscreen
+              allow="encrypted-media *; fullscreen *; clipboard-write *;">
+            </iframe>
+          </div>
         </div>
 
-      </div>
+      </section>
+
     </section>
 
-    <div class="world glass">
-      <i class="fa-solid fa-globe"></i>
-      <div>
-        <b>Worldwide</b>
-        <span>Working Globally</span>
-      </div>
-      <em></em>
-    </div>
+    <section class="quick-row">
+      <a href="#" class="quick glass">
+        <i class="fa-brands fa-discord"></i>
+        <b>Discord</b>
+        <span>Join community</span>
+      </a>
+
+      <a href="#" class="quick glass">
+        <i class="fa-brands fa-instagram"></i>
+        <b>Instagram</b>
+        <span>Follow updates</span>
+      </a>
+
+      <a href="#" class="quick glass">
+        <i class="fa-solid fa-cube"></i>
+        <b>Minecraft</b>
+        <span>Play server</span>
+      </a>
+
+      <a href="#" class="quick glass">
+        <i class="fa-solid fa-bag-shopping"></i>
+        <b>Store</b>
+        <span>Visit shop</span>
+      </a>
+    </section>
 
   </main>
 

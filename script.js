@@ -7,7 +7,6 @@ document.addEventListener("mousemove", (e) => {
 
 const canvas = document.getElementById("stars");
 const ctx = canvas.getContext("2d");
-
 let stars = [];
 
 function resizeCanvas() {
@@ -22,9 +21,9 @@ for (let i = 0; i < 120; i++) {
   stars.push({
     x: Math.random() * window.innerWidth,
     y: Math.random() * window.innerHeight,
-    r: Math.random() * 1.8,
-    vx: (Math.random() - 0.5) * 0.4,
-    vy: (Math.random() - 0.5) * 0.4
+    r: Math.random() * 1.7,
+    vx: (Math.random() - 0.5) * 0.35,
+    vy: (Math.random() - 0.5) * 0.35
   });
 }
 
@@ -40,7 +39,7 @@ function drawStars() {
 
     ctx.beginPath();
     ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
-    ctx.fillStyle = "rgba(255,255,255,.8)";
+    ctx.fillStyle = "rgba(255,255,255,.75)";
     ctx.fill();
   }
 
@@ -49,6 +48,20 @@ function drawStars() {
 
 drawStars();
 
+const snowContainer = document.querySelector(".snow");
+
+for (let i = 0; i < 130; i++) {
+  const snow = document.createElement("div");
+  snow.className = "snowflake";
+  snow.innerHTML = "•";
+  snow.style.left = Math.random() * 100 + "vw";
+  snow.style.fontSize = 3 + Math.random() * 7 + "px";
+  snow.style.opacity = 0.25 + Math.random() * 0.75;
+  snow.style.animationDuration = 6 + Math.random() * 12 + "s";
+  snow.style.animationDelay = Math.random() * 10 + "s";
+  snowContainer.appendChild(snow);
+}
+
 document.querySelectorAll(".glass").forEach((card) => {
   card.addEventListener("mousemove", (e) => {
     const rect = card.getBoundingClientRect();
@@ -56,11 +69,11 @@ document.querySelectorAll(".glass").forEach((card) => {
     const y = e.clientY - rect.top;
 
     card.style.background = `
-      radial-gradient(circle at ${x}px ${y}px, rgba(255,255,255,.14), rgba(255,255,255,.05) 35%)
+      radial-gradient(circle at ${x}px ${y}px, rgba(255,255,255,.13), rgba(255,255,255,.045) 38%)
     `;
   });
 
   card.addEventListener("mouseleave", () => {
-    card.style.background = "rgba(255,255,255,.055)";
+    card.style.background = "rgba(255,255,255,.045)";
   });
 });
