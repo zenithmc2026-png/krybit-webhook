@@ -50,14 +50,14 @@ drawStars();
 
 const snowContainer = document.querySelector(".snow");
 
-for (let i = 0; i < 130; i++) {
+for (let i = 0; i < 150; i++) {
   const snow = document.createElement("div");
   snow.className = "snowflake";
-  snow.innerHTML = "•";
+  snow.innerHTML = "❄";
   snow.style.left = Math.random() * 100 + "vw";
-  snow.style.fontSize = 3 + Math.random() * 7 + "px";
-  snow.style.opacity = 0.25 + Math.random() * 0.75;
-  snow.style.animationDuration = 6 + Math.random() * 12 + "s";
+  snow.style.fontSize = 5 + Math.random() * 10 + "px";
+  snow.style.opacity = 0.15 + Math.random() * 0.75;
+  snow.style.animationDuration = 7 + Math.random() * 14 + "s";
   snow.style.animationDelay = Math.random() * 10 + "s";
   snowContainer.appendChild(snow);
 }
@@ -76,4 +76,13 @@ document.querySelectorAll(".glass").forEach((card) => {
   card.addEventListener("mouseleave", () => {
     card.style.background = "rgba(255,255,255,.045)";
   });
+});
+
+const profile = document.querySelector(".profile-card");
+
+document.addEventListener("mousemove", (e) => {
+  const x = (window.innerWidth / 2 - e.clientX) / 70;
+  const y = (window.innerHeight / 2 - e.clientY) / 70;
+
+  profile.style.transform = `rotateY(${-x}deg) rotateX(${y}deg)`;
 });
