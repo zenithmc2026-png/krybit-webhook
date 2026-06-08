@@ -81,8 +81,8 @@ document.querySelectorAll(".glass").forEach((card) => {
 const profile = document.querySelector(".profile-card");
 
 document.addEventListener("mousemove", (e) => {
-  const x = (window.innerWidth / 2 - e.clientX) / 70;
-  const y = (window.innerHeight / 2 - e.clientY) / 70;
-
+  if (!profile) return;
+  const x = (window.innerWidth / 2 - e.clientX) / 80;
+  const y = (window.innerHeight / 2 - e.clientY) / 80;
   profile.style.transform = `rotateY(${-x}deg) rotateX(${y}deg)`;
 });
